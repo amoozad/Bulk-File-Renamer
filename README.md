@@ -25,7 +25,6 @@ A powerful command-line tool for renaming multiple files at once. Supports patte
 - 📝 **Operation History**: Track all renaming operations with timestamps
 - 🔒 **Safe Operations**: Checks for conflicts and duplicates
 
-
 ## 🚀 Installation
 
 1. Clone this repository:
@@ -235,3 +234,65 @@ python main.py -p "*.log" -r -n "{YYYY}{MM}{DD}_{origname}.log" --backup
 0 1 * * * cd /path/to/files && python /path/to/bulk-file-renamer/main.py -p "*.csv" -n "$(date +\%Y\%m\%d)_{origname}.csv"
 ```
 
+## 📋 Best Practices
+
+1. **Always Preview First**: Use `--preview` to see changes before applying
+2. **Use Backups**: Enable `--backup` for important renaming operations
+3. **Test on Sample Files**: Test complex patterns on a few files first
+4. **Check History**: Review `--history` to track previous operations
+5. **Use Verbose Mode**: Enable `-v` for detailed operation logs
+
+## 🛡️ Safety Features
+
+- **Duplicate Prevention**: Automatically detects naming conflicts
+- **Backup System**: Creates timestamped backups before renaming
+- **Rollback Support**: Easy reversion of the last operation
+- **Preview Mode**: Non-destructive visualization of changes
+- **Filename Sanitization**: Removes illegal characters automatically
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how you can contribute:
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 🚀 Future Features
+
+- [ ] GUI interface
+- [ ] File metadata-based renaming (EXIF, ID3, etc.)
+- [ ] Multi-threaded operation for large file sets
+- [ ] Advanced filtering options
+- [ ] Custom plugin support
+- [ ] Remote file support (FTP, cloud storage)
+- [ ] Batch operations scheduler
+- [ ] File attribute preservation options
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Inspired by the need for efficient file organization
+- Built with Python standard libraries
+- Special thanks to all the file naming convention enthusiasts!
+
+---
+
+<div align="center">
+  <h3>🌟 Simplify your file management! 🌟</h3>
+  
+  ```
+     📂 BULK FILE RENAMER 📂
+    ╔═════════════════════╗
+    ║  Organize. Rename.  ║
+    ║     Automate.       ║
+    ╚═════════════════════╝
+  ```
+  
+  <p>If you find this useful, please give it a ⭐!</p>
+</div>
