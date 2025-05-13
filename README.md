@@ -170,3 +170,68 @@ Renamed to:
   photo_003.jpg
 ```
 
+### Example 2: Date-based Organization
+
+Command:
+```bash
+python main.py -p "*.txt" -n "{YYYY}_{MM}_{origname}.{ext}"
+```
+
+Results:
+```
+Original files:
+  notes.txt
+  todo.txt
+  ideas.txt
+
+Renamed to (assuming files were modified in 2024-01):
+  2024_01_notes.txt
+  2024_01_todo.txt
+  2024_01_ideas.txt
+```
+
+### Example 3: Find and Replace
+
+Command:
+```bash
+python main.py -p "*report*" --find "report" --replace "analysis"
+```
+
+Results:
+```
+Original files:
+  monthly_report.pdf
+  report_2023.xlsx
+  final_report_v2.docx
+
+Renamed to:
+  monthly_analysis.pdf
+  analysis_2023.xlsx
+  final_analysis_v2.docx
+```
+
+## 🔄 Workflow Integration
+
+### Batch Files (Windows)
+
+```batch
+@echo off
+:: Rename photos with date and incremental counter
+python main.py -p "*.jpg" "*.png" -n "{date}_photo_{count:3}.{ext}" --backup
+```
+
+### Shell Scripts (Linux/macOS)
+
+```bash
+#!/bin/bash
+# Organize log files with ISO date format
+python main.py -p "*.log" -r -n "{YYYY}{MM}{DD}_{origname}.log" --backup
+```
+
+### Cron Jobs (Scheduled Tasks)
+
+```bash
+# Add to crontab to organize files daily
+0 1 * * * cd /path/to/files && python /path/to/bulk-file-renamer/main.py -p "*.csv" -n "$(date +\%Y\%m\%d)_{origname}.csv"
+```
+
